@@ -1,14 +1,13 @@
 \documentclass[purpleprocv]{procv}
 \RequirePackage{procv}
-\usepackage{ragged2e}
-\RenewDocumentCommand\TblrAlignLeft{}{\RaggedRight}
+
 \begin{document}
     \begin{procv-twocolumns}
         % --------------------------------------
         % First column, spans over all pages
         % --------------------------------------
         \profilepic{profilepicture}
-        \aboutme{
+        \aboutme{About me}{
             I am a very cute axolotl lamp! I provide smiles and light for
             anyone that wants it! Check out other axolotl pictures for more 
             cuteness!
@@ -25,22 +24,22 @@
             \skill{Bash}{3}
             \skill{\LaTeX}{3.5}
         \end{skills}
-        \links{
-            %\link{\faGlobe}{taddic.com}
-            \link{\faLinkedin}{linkedin.com/in/xyz}
-            \link{\faGithub}{github.com/xyz}
+        \links{Links}{
+            %\website{coolwebsite.com/}
+            \linkedin{linkedin.com/in/xyz}
+            \github{github.com/xyz}
         }
         \begin{skills}{Languages}
             \skill{Swedish}{5}
             \skill{English}{4.5}
             \skill{French}{1}
         \end{skills}
-        \references{References available upon request.}
-        \begin{personal}
+        \references{References}{References available upon request.}
+        \begin{personal}{Personal details}
             \detail{Nationality}{Klingon}
             \detail{Day of birth}{29 Feb 1920}
         \end{personal}
-        \hobbies{
+        \hobbies{Hobbies}{
             I go to the gym and play video games.
         }
         %
@@ -50,12 +49,9 @@
         \switchcolumn % This needs to be at the top of the second column
         %
         \header{Cute}{Axolotl}{Lightgiving lamp}{
-            \contactinfo{\faMapMarker*{}}{Axolotl street 3, 12345, Paris, France}
-            \newline
-            \contactinfo{\faPhone*{}}{+4670 123 45 67}
-            \newline
-            \contactinfo{\faEnvelope}{axolotl.cute@gmail.com}
-            %\logo{logo-itancan}% This comment NEED to be here due to minipage quirks 
+            %% Choose either \contactinfo or \logo
+            \contactinfo{Axolotl street 3, 12345, Paris, France}{+4670 123 45 67}{axolotl.cute@gmail.com}
+            %\logo{logo}
         }
         \begin{experience}{Work Experience}
           \exprow{Company A}{Paris, France}{Jun 2023 - Feb 2025}{React, NodeJS, Github-actions}{Software Developer}
@@ -87,7 +83,7 @@
            \newline
            Random text, random text, random text, random text.}
         \end{experience}
-        \newpage
+        \newpage % Optional new page, depends on how much space previous sections takes
         \begin{experience}{Education}
           \exprow{School A}{Paris, France}{Jan 2014}{}{Cool degree A}{
             Random text, random text, random text, random text. Random text, random text, random text, random text.

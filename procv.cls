@@ -4,10 +4,10 @@
 \ProcessOptions\relax
 \LoadClass[10pt]{article}
 
+
 % ------------------------------------------------
 % Commands/environments, to be used from .tex file
 % ------------------------------------------------
-
 \newenvironment{procv-twocolumns}
     {
         \setlength{\columnsep}{1.5cm}
@@ -29,10 +29,10 @@
     }
 
 
-\newcommand{\aboutme}[1]{
+\newcommand{\aboutme}[2]{
     {\color{sidebarTextColor}
-        \section*{ABOUT ME}
-        #1 
+        \section*{#1}
+        #2
     }
     \newline
     \separatorline
@@ -56,28 +56,33 @@
     {\color{sidebarTextColor} #1 } & \grade{#2} \\
 }    
 
-\newcommand{\links}[1]
+\newcommand{\links}[2]
     {
         {\color{sidebarTextColor}
-            \section*{Links}
+            \section*{#1}
         }
-        #1
+        #2
         \newline
         \separatorline
     }
 
-\newcommand{\link}[2]{
-    \begin{tikzpicture}
-        \draw[draw=white,fill=white] (0,0) circle (0.2cm);
-        \node[] at (0,0) {\footnotesize\color{mainTitleColor} #1};
-        \node[right=0.15cm] at (0,0) {\href{http://www.#2}{#2}};
-    \end{tikzpicture}
+\newcommand{\website}[1]{\link{\faGlobe}{#1}}
+\newcommand{\linkedin}[1]{\link{\faLinkedin}{#1}}
+\newcommand{\github}[1]{\link{\faGithub}{#1}}
+
+\newcommand{\references}[2]{
+    {\color{sidebarTextColor}
+        \section*{#1}
+        #2
+    }
+    \newline
+    \separatorline
 }
 
-\newenvironment{personal}
+\newenvironment{personal}[1]
     {
         {\color{sidebarTextColor}
-            \section*{Personal details}
+            \section*{#1}
         }
         \begin{tabular}{@{}ll}
     }
@@ -92,51 +97,40 @@
     {\color{sidebarTextColor} #1 } & {\color{sidebarTextColor} #2 } \\
 }
 
-\newcommand{\hobbies}[1]{
+\newcommand{\hobbies}[2]{
     {\color{sidebarTextColor}
-        \section*{Hobbies}
-        #1
+        \section*{#1}
+        #2
     }
     \newline
     \separatorline
 
-}
-
-\newcommand{\references}[1]{
-    {\color{sidebarTextColor}
-        \section*{References}
-        #1    
-    }
-    \newline
-    \separatorline
 }
 
 \newcommand{\header}[4]{
     \begin{minipage}[b][3.9cm][c]{7.5cm}
         {\color{mainTitleColor}
-            \section*{{\huge \uppercase{#1}\newline \uppercase{#2}}}
+            \section*{{\huge #1\newline #2}}
         }
         {\color{subTitleColor}
-            \subsection*{\uppercase{#3}}
+            \subsection*{#3}
         }
     \end{minipage}% This comment NEED to be here due to minipage quirks
-    \begin{minipage}[b][3.9cm][c]{5cm}
+    \begin{minipage}[b][3.9cm][c]{5cm}   
         #4
     \end{minipage}
 }
 
-
-
-\newcommand{\contactinfo}[2]{
-    \begin{tikzpicture}
-      \draw[draw=mainTitleColor,fill=mainTitleColor] (0,0) circle (0.26cm);
-      \node[] at (0,0) {\footnotesize\color{white} #1};
-      \node[right=0.25cm] at (0,0) {\footnotesize\color{subTitleColor} #2};
-    \end{tikzpicture}
+\newcommand{\contactinfo}[3]{
+    \contactinforow{\faMapMarker*{}}{#1}
+    \newline
+    \contactinforow{\faPhone*{}}{#2}
+    \newline
+    \contactinforow{\faEnvelope}{#3}
 }
 
 \newcommand{\logo}[1]{
-    \includegraphics[width=5cm, right]{#1}
+    \includegraphics[width=5cm, right]{#1}%
 }
 
 \newenvironment{experience}[1]
@@ -170,9 +164,8 @@
 
 
 % ------------------------------------------------
-% Packages
+% Packages & formats
 % ------------------------------------------------
-%\RequirePackage{float}
 \RequirePackage[export]{adjustbox}
 \RequirePackage{fontawesome5}
 \RequirePackage{fontspec}
@@ -197,7 +190,7 @@
 \RequirePackage{tikz}
 \RequirePackage{titlesec}
 \titleformat{\section} % <command>
-            {\fontsize{11}{1}\fontspec{Fira Sans Medium}} % <format>
+            {\fontsize{10}{1}\fontspec{Fira Sans Medium}\uppercase} % <format>
             {} % <label> to show up for section
             {0em} % <sep> Space between label and title text
             {} % <before-code> Code that shows up before title body
@@ -206,7 +199,7 @@
              {10pt} % before spacing
              {5pt} % after spacing
 \titleformat{\subsection} % <command>
-            {\fontsize{8}{1}\fontspec{Fira Sans Medium}} % <format>
+            {\fontsize{8}{1}\fontspec{Fira Sans Medium}\uppercase} % <format>
             {} % <label> to show up for section
             {0em} % <sep> Space between label and title text
             {} % <before-code> Code that shows up before title body
@@ -216,17 +209,32 @@
              {0pt} % after spacing
 
 
+% ------------------------------------------------
+% Commands/environments, mainly for internal use
+% ------------------------------------------------
+\newcommand{\link}[2]{
+    \begin{tikzpicture}
+        \draw[draw=white,fill=white] (0,0) circle (0.2cm);
+        \node[] at (0,0) {\footnotesize\color{mainTitleColor} #1};
+        \node[right=0.15cm] at (0,0) {\href{http://www.#2}{#2}};
+    \end{tikzpicture}
+}
 
-% ------------------------------------------------
-% Commands, for intrnal use in this class file
-% ------------------------------------------------
+\newcommand{\contactinforow}[2]{
+    \begin{tikzpicture}
+      \draw[draw=mainTitleColor,fill=mainTitleColor] (0,0) circle (0.26cm);
+      \node[] at (0,0) {\footnotesize\color{white} #1};
+      \node[right=0.25cm] at (0,0) {\footnotesize\color{subTitleColor} #2};
+    \end{tikzpicture}
+}
+
 \newcommand{\separatorline}{
     {\color{separatorLineColor}
         \hrulefill
     }}
 
 
-\newcommand{\gradelong}[6]{%
+\newcommand{\grade}[1]{%
     \pgfmathtruncatemacro\floored{#1}%
     \pgfmathsetmacro\diff{#1-\floored}%
     \newdimen\diffDim%
@@ -234,36 +242,26 @@
     \newdimen\numPointsDim
     \numPointsDim = #1 pt
     \newdimen\maxPointsDim%
-    \maxPointsDim = #2 pt%
+    \maxPointsDim = 5 pt%
     \begin{tikzpicture}
-        \foreach \x in {1, ..., #2}{
+        \foreach \x in {1, ..., 5}{
             \ifnum \x > \floored \relax%
-                \def\fillCol{#6}%
+                \def\fillCol{gradeBackColor}%
             \else%
-                \def\fillCol{#5}%
+                \def\fillCol{gradeFrontColor}%
             \fi%
-            \fill[\fillCol] (#3*\x, 0) circle (#4);
+            \fill[\fillCol] (15pt*\x, 0) circle (3pt);
         }%
         \ifdim \diffDim > 0 pt \relax%
             \ifdim \numPointsDim > \maxPointsDim \relax%
             \else%
-                \pgfmathsetmacro\pos{#3*(\floored+1)}%
+                \pgfmathsetmacro\pos{15pt*(\floored+1)}%
                 \begin{scope}[xshift=\pos]
-                    \clip (-#4,-#4) rectangle ++(#4*2*\diff,#4*2);
-                    \fill[#5] (0, 0) circle (#4);
+                    \clip (-3pt,-3pt) rectangle ++(3pt*2*\diff,3pt*2);
+                    \fill[gradeFrontColor] (0, 0) circle (3pt);
                 \end{scope}
             \fi%
         \else%
         \fi%
     \end{tikzpicture}%
-}
-
-\newcommand{\grade}[1]{
-    \gradelong
-    {#1}        % grade as floating point value
-    {5}         % max number of points
-    {15pt}      % spacing between points
-    {3pt}       % radius of point
-    {gradeFrontColor}% foreground color
-    {gradeBackColor} % background color
 }
