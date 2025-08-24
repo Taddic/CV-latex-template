@@ -1,0 +1,114 @@
+\documentclass[purpleprocv]{procv}
+\RequirePackage{procv}
+\usepackage{ragged2e}
+\RenewDocumentCommand\TblrAlignLeft{}{\RaggedRight}
+\begin{document}
+    \begin{procv-twocolumns}
+        % --------------------------------------
+        % First column, spans over all pages
+        % --------------------------------------
+        \profilepic{profilepicture}
+        \aboutme{
+            I am a very cute axolotl lamp! I provide smiles and light for
+            anyone that wants it! Check out other axolotl pictures for more 
+            cuteness!
+        }
+        \begin{skills}{Programming}
+            \skill{Erlang}{4.5}
+            \skill{Elixir}{3}
+            \skill{Python}{2.5}
+            \skill{Docker}{2}
+            \skill{Jenkins}{2}
+            \skill{Html/CSS}{3.5}
+            \skill{Javascript}{2.5}
+            \skill{Git/SVN}{3.5}
+            \skill{Bash}{3}
+            \skill{\LaTeX}{3.5}
+        \end{skills}
+        \links{
+            %\link{\faGlobe}{taddic.com}
+            \link{\faLinkedin}{linkedin.com/in/xyz}
+            \link{\faGithub}{github.com/xyz}
+        }
+        \begin{skills}{Languages}
+            \skill{Swedish}{5}
+            \skill{English}{4.5}
+            \skill{French}{1}
+        \end{skills}
+        \references{References available upon request.}
+        \begin{personal}
+            \detail{Nationality}{Klingon}
+            \detail{Day of birth}{29 Feb 1920}
+        \end{personal}
+        \hobbies{
+            I go to the gym and play video games.
+        }
+        %
+        % --------------------------------------
+        % Second colum, spans over all pages
+        % --------------------------------------
+        \switchcolumn % This needs to be at the top of the second column
+        %
+        \header{Cute}{Axolotl}{Lightgiving lamp}{
+            \contactinfo{\faMapMarker*{}}{Axolotl street 3, 12345, Paris, France}
+            \newline
+            \contactinfo{\faPhone*{}}{+4670 123 45 67}
+            \newline
+            \contactinfo{\faEnvelope}{axolotl.cute@gmail.com}
+            %\logo{logo-itancan}% This comment NEED to be here due to minipage quirks 
+        }
+        \begin{experience}{Work Experience}
+          \exprow{Company A}{Paris, France}{Jun 2023 - Feb 2025}{React, NodeJS, Github-actions}{Software Developer}
+          {Random text, random text, random text, random text. Random text, random text, random text, random text.
+           \newline
+           Random text, random text, random text, random text.}
+          \exprow{Company B}{Paris, France}{Jun 2023 - Feb 2025}{React, NodeJS, Github-actions}{Software Developer}
+          {Random text, random text, random text, random text. Random text, random text, random text, random text.
+           \newline
+           Random text, random text, random text, random text.}
+          \exprow{Company C}{Paris, France}{Jun 2023 - Feb 2025}{React, NodeJS, Github-actions}{Software Developer}
+          {Random text, random text, random text, random text. Random text, random text, random text, random text.
+           \newline
+           Random text, random text, random text, random text.}
+          \exprow{Company D}{Paris, France}{Jun 2023 - Feb 2025}{React, NodeJS, Github-actions}{Software Developer}
+          {Random text, random text, random text, random text. Random text, random text, random text, random text.
+           \newline
+           Random text, random text, random text, random text.}
+          \exprow{Company E}{Paris, France}{Jun 2023 - Feb 2025}{React, NodeJS, Github-actions}{Software Developer}
+          {Random text, random text, random text, random text. Random text, random text, random text, random text.
+           \newline
+           Random text, random text, random text, random text.}
+          \exprow{Company F}{Paris, France}{Jun 2023 - Feb 2025}{React, NodeJS, Github-actions}{Software Developer}
+          {Random text, random text, random text, random text. Random text, random text, random text, random text.
+           \newline
+           Random text, random text, random text, random text.}
+          \exprow{Company G}{Paris, France}{Jun 2023 - Feb 2025}{React, NodeJS, Github-actions}{Software Developer}
+          {Random text, random text, random text, random text. Random text, random text, random text, random text.
+           \newline
+           Random text, random text, random text, random text.}
+        \end{experience}
+        \newpage
+        \begin{experience}{Education}
+          \exprow{School A}{Paris, France}{Jan 2014}{}{Cool degree A}{
+            Random text, random text, random text, random text. Random text, random text, random text, random text.
+            Random text, random text, random text, random text. Random text, random text, random text, random text.
+          }
+          \exprow{School B}{Paris, France}{Jan 2014}{}{Cool degree B}{
+            Random text, random text, random text, random text. Random text, random text, random text, random text.
+            Random text, random text, random text, random text. Random text, random text, random text, random text.
+          }
+          \exprow{School C}{Paris, France}{Jan 2014}{}{Cool degree C}{
+            Random text, random text, random text, random text. Random text, random text, random text, random text.
+            Random text, random text, random text, random text. Random text, random text, random text, random text.
+          }
+        \end{experience}
+        \begin{experience}{Extra-curricular activities}
+          \exprow{Board member}{Jan 2014 - Jan 2019}{www.coolwebsite.com}{}{Random  Club}
+          {Random text, random text, random text, random text. Random text, random text, random text, random text.}
+          \exprow{Instructor}{Jan 2014 - Jan 2019}{www.coolwebsite.com}{}{Random  Club}
+          {Random text, random text, random text, random text. Random text, random text, random text, random text.
+           \newline
+           Random text, random text, random text, random text. Random text, random text, random text, random text.}
+        \end{experience}
+    \end{procv-twocolumns}
+\end{document}

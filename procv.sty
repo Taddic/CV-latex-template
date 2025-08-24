@@ -1,0 +1,31 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{procv}[2025/08/13 2025/08/13 A professional CV template package]
+
+\DeclareOption{purpleprocv}{
+
+\definecolor{sidebarBgColor}{RGB}{88,49,147}% purple
+\definecolor{sidebarTextColor}{RGB}{255,255,255}% white
+
+\definecolor{gradeFrontColor}{RGB}{56,114,178}% light blue
+\definecolor{gradeBackColor}{RGB}{200,200,200}% gray
+
+\definecolor{separatorLineColor}{RGB}{150,150,150}% gray
+
+\definecolor{mainTitleColor}{RGB}{88,49,147}% purple
+\definecolor{subTitleColor}{RGB}{130,130,130}% gray
+
+} % End of option dark
+
+\DeclareOption{grayprocv}{
+
+\definecolor{sidebarBgColor}{RGB}{150,150,150}% dark gray
+\definecolor{sidebarTextColor}{RGB}{0,0,0}% black
+
+\definecolor{gradeFrontColor}{RGB}{200,0,0}% red
+\definecolor{gradeBackColor}{RGB}{200,200,200}% gray
+
+\definecolor{separatorLineColor}{RGB}{255,255,255}% gray
+
+} % End of option light
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
+\ProcessOptions\relax
