@@ -1,31 +1,59 @@
+% ------------------------------------------------
+% Custom package associated with procv class file
+% ------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{procv}[2025/08/13 2025/08/13 A professional CV template package]
 
 \DeclareOption{purpleprocv}{
+    % Colors for the left sidebar
+    \definecolor{sidebarBgColor}{RGB}{88,49,147}% purple
+    \definecolor{sidebarTextColor}{RGB}{255,255,255}% white
 
-\definecolor{sidebarBgColor}{RGB}{88,49,147}% purple
-\definecolor{sidebarTextColor}{RGB}{255,255,255}% white
+    % Colors for skill circles
+    \definecolor{gradeFrontColor}{RGB}{56,114,178}% light blue
+    \definecolor{gradeBackColor}{RGB}{200,200,200}% gray
 
-\definecolor{gradeFrontColor}{RGB}{56,114,178}% light blue
-\definecolor{gradeBackColor}{RGB}{200,200,200}% gray
-
-\definecolor{separatorLineColor}{RGB}{150,150,150}% gray
-
-\definecolor{mainTitleColor}{RGB}{88,49,147}% purple
-\definecolor{subTitleColor}{RGB}{130,130,130}% gray
-
-} % End of option dark
+    % Colors for separator line
+    \definecolor{separatorLineColor}{RGB}{150,150,150}% gray
+    
+    % Colors for headings in the right main page
+    \definecolor{mainTitleColor}{RGB}{88,49,147}% same as sidebarBgColor
+    \definecolor{subTitleColor}{RGB}{130,130,130}% gray
+} % End of option purpleprocv
 
 \DeclareOption{grayprocv}{
+    % Colors for the left sidebar
+    \definecolor{sidebarBgColor}{RGB}{100,100,100}% dark gray
+    \definecolor{sidebarTextColor}{RGB}{0,0,0}% black
 
-\definecolor{sidebarBgColor}{RGB}{150,150,150}% dark gray
-\definecolor{sidebarTextColor}{RGB}{0,0,0}% black
+    % Colors for skill circles
+    \definecolor{gradeFrontColor}{RGB}{100,0,0}% red
+    \definecolor{gradeBackColor}{RGB}{200,200,200}% gray
 
-\definecolor{gradeFrontColor}{RGB}{200,0,0}% red
-\definecolor{gradeBackColor}{RGB}{200,200,200}% gray
+    % Colors for separator line
+    \definecolor{separatorLineColor}{RGB}{255,255,255}% gray
 
-\definecolor{separatorLineColor}{RGB}{255,255,255}% gray
+    % Colors for headings in the right main page
+    \definecolor{mainTitleColor}{RGB}{100,100,100}% same as sidebarBgColor
+    \definecolor{subTitleColor}{RGB}{130,130,130}% gray
+} % End of option grayprocv
 
-} % End of option light
-\DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
+\DeclareOption{orangeprocv}{
+    % Colors for the left sidebar
+    \definecolor{sidebarBgColor}{RGB}{255, 153, 19}% Goldfish Orange
+    \definecolor{sidebarTextColor}{RGB}{0,0,0}% black
+
+    % Colors for skill circles
+    \definecolor{gradeFrontColor}{RGB}{80,80,0}% red
+    \definecolor{gradeBackColor}{RGB}{200,200,200}% gray
+
+    % Colors for separator line
+    \definecolor{separatorLineColor}{RGB}{255,255,255}% gray
+
+    % Colors for headings in the right main page
+    \definecolor{mainTitleColor}{RGB}{255, 153, 19}% same as sidebarBgColor
+    \definecolor{subTitleColor}{RGB}{130,130,130}% gray
+} % End of option orangeprocv
+
+\DeclareOption*{\PackageWarning{procv}{Unknown ‘\CurrentOption’}}
 \ProcessOptions\relax

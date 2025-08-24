@@ -1,3 +1,6 @@
+% ------------------------------------------------
+% Custom class file to be used from .tex files
+% ------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{procv}[2025/08/13 A professional CV template class]
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
@@ -186,6 +189,7 @@
 \RequirePackage{nopageno}
 \RequirePackage{paracol}
 \RequirePackage{parskip}
+\RequirePackage{procv} % This CV style package
 \RequirePackage{tabularray}
 \RequirePackage{tikz}
 \RequirePackage{titlesec}
