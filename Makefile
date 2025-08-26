@@ -9,7 +9,7 @@ show: all
 	$(PDF_VIEWER) example.pdf
 
 clean:
-	rm -rf *.log
+	rm -rf *.log *.aux *.out *.gz
 
 clean-pdf: clean
 	-@rm -rf *.pdf

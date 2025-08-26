@@ -1,9 +1,15 @@
-% ------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Custom package associated with procv class file
-% ------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{procv}[2025/08/13 2025/08/13 A professional CV template package]
+\ProvidesPackage{procv}[2025/08/26 A professional CV template package]
 
+
+% ------------------------------------------------
+% Option     : purpleprocv
+% Description: A purple theme for the cv
+% Usage      : \documentclass[purpleprocv]{procv}
+% ------------------------------------------------
 \DeclareOption{purpleprocv}{
     % Colors for the left sidebar
     \definecolor{sidebarBgColor}{RGB}{88,49,147}% purple
@@ -21,6 +27,12 @@
     \definecolor{subTitleColor}{RGB}{130,130,130}% gray
 } % End of option purpleprocv
 
+
+% ------------------------------------------------
+% Option     : grayprocv
+% Description: A gray theme for the cv
+% Usage      : \documentclass[grayprocv]{procv}
+% ------------------------------------------------
 \DeclareOption{grayprocv}{
     % Colors for the left sidebar
     \definecolor{sidebarBgColor}{RGB}{100,100,100}% dark gray
@@ -31,13 +43,19 @@
     \definecolor{gradeBackColor}{RGB}{200,200,200}% gray
 
     % Colors for separator line
-    \definecolor{separatorLineColor}{RGB}{255,255,255}% gray
+    \definecolor{separatorLineColor}{RGB}{235,235,235}% white
 
     % Colors for headings in the right main page
     \definecolor{mainTitleColor}{RGB}{100,100,100}% same as sidebarBgColor
     \definecolor{subTitleColor}{RGB}{130,130,130}% gray
 } % End of option grayprocv
 
+
+% ------------------------------------------------
+% Option     : orangeprocv
+% Description: A orange theme for the cv
+% Usage      : \documentclass[orangeprocv]{procv}
+% ------------------------------------------------
 \DeclareOption{orangeprocv}{
     % Colors for the left sidebar
     \definecolor{sidebarBgColor}{RGB}{255, 153, 19}% Goldfish Orange
@@ -48,12 +66,36 @@
     \definecolor{gradeBackColor}{RGB}{200,200,200}% gray
 
     % Colors for separator line
-    \definecolor{separatorLineColor}{RGB}{255,255,255}% gray
+    \definecolor{separatorLineColor}{RGB}{200,200,200}% gray
 
     % Colors for headings in the right main page
     \definecolor{mainTitleColor}{RGB}{255, 153, 19}% same as sidebarBgColor
     \definecolor{subTitleColor}{RGB}{130,130,130}% gray
 } % End of option orangeprocv
+
+
+% ------------------------------------------------
+% Option     : greenprocv
+% Description: A green theme for the cv
+% Usage      : \documentclass[greenprocv]{procv}
+% ------------------------------------------------
+\DeclareOption{greenprocv}{
+    % Colors for the left sidebar
+    \definecolor{sidebarBgColor}{RGB}{76, 147, 23}% Goldfish Orange
+    \definecolor{sidebarTextColor}{RGB}{0,0,0}% black
+
+    % Colors for skill circles
+    \definecolor{gradeFrontColor}{RGB}{0,78,56}% dark green
+    \definecolor{gradeBackColor}{RGB}{200,200,200}% gray
+
+    % Colors for separator line
+    \definecolor{separatorLineColor}{RGB}{200,200,200}% gray
+
+    % Colors for headings in the right main page
+    \definecolor{mainTitleColor}{RGB}{76, 147, 23}% same as sidebarBgColor
+    \definecolor{subTitleColor}{RGB}{130,130,130}% gray
+} % End of option greenprocv
+
 
 \DeclareOption*{\PackageWarning{procv}{Unknown ‘\CurrentOption’}}
 \ProcessOptions\relax
