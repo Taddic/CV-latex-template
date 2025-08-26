@@ -39,5 +39,3 @@ make clean-pdf
 ![Green CV](exampleImages/greenprocv.jpg 'Green CV')
 ![Orange CV](exampleImages/orangeprocv.jpg 'Orange CV')
 ![Gray CV](exampleImages/grayprocv.jpg 'Gray CV')
-
-https://
